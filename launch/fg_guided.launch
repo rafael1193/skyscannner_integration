@@ -1,0 +1,51 @@
+<!-- Launch one aircraft using FG backend without planning -->
+
+<launch>
+    <!-- Configuration -->
+    <rosparam command="load" file="$(find skyscanner)/launch/conf/fg_common.yaml" />
+    <group ns="mesonh">
+        <rosparam command="load" file="$(find skyscanner)/launch/conf/mesonh.yaml" />
+    </group>
+    <group ns="pathplanner">
+        <rosparam command="load" file="$(find skyscanner)/launch/conf/pathplanner.yaml" />
+        <param name="initial_time" value="10"/>
+        <param name="reset_before_planning" value="False"/>
+        <group ns="acsim">
+            <rosparam command="load" file="$(find skyscanner)/launch/conf/nps_malolo1_model.yaml" />
+        </group>
+        <param name="use_dummy_env" value="False" />
+    </group>
+
+    <param name="use_sim_time" value="true" />
+    <param name="clock_time_scale" value="1" />
+
+    <!-- Global nodes -->
+    <node pkg="skyscanner"
+          type="clock_generator.py"
+          name="clock_generator"
+          required="true"/>
+
+    <node pkg="skyscanner"
+          type="atmosphere.py"
+          name="atmosphere"
+          required="true"/>
+
+    <node pkg="skyscanner"
+          type="flightgearenvironment.py"
+          name="flightgearenvironment"/>
+
+    <!-- Aircrafts -->
+    <!-- Each aircraft should be running in its own "group".
+         Then go to fg_common.yaml and add the groups to aircrafts_ns -->
+    <group ns="ac_1">
+        <rosparam command="load" file="$(find skyscanner)/launch/conf/fg_ac1.yaml" />
+        <rosparam command="load" file="$(find skyscanner)/launch/conf/guidance_params.yaml" />
+        <node pkg="skyscanner"
+              type="guidance.py"
+              name="guidance"/>
+
+        <node pkg="skyscanner"
+              type="flightgearuav.py"
+              name="flightgearuav"/>
+    </group>
+</launch>

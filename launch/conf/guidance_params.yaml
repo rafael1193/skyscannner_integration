@@ -1,0 +1,27 @@
+# Guidance algorithm parameters
+
+# StepGuidance
+StepGuidance/high: 0.7853981633974483  # pi / 4
+StepGuidance/low: 0.0
+StepGuidance/period: 40
+StepGuidance/duty_cycle: 0.5
+
+# StepGuidance
+RampGuidance/slope: 0.10471975511965977  # pi / 30
+
+# VFMathGuidance
+VFMathGuidance/ks: 1
+VFMathGuidance/kn: 0.00006
+
+# PLOSGuidance
+PLOSGuidance/k_p: 100
+PLOSGuidance/k_l: 3
+
+# VFGuidance
+VFGuidance/v: 15
+VFGuidance/pc: 600
+
+# The parameters defined for each algorithm will be pased to the algorithm class.
+# For instance, if SomeGuidance/param1 and SomeGuidance/param2 are defined,
+# the algorithm "SomeGuidance" will get "param1" and "param2" kwargs in the
+# constructor of the class.

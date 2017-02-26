@@ -1,0 +1,22 @@
+### acsim parameters (copy of easystar)###
+
+## Must be the same as in pathplanner ##
+dT: 1.  # ! Should be DT/N_wp
+dT_sim: 0.1
+dT_samples: 1.001  # time between samples
+##########################################
+
+ac_model: 'propulsion'
+ac_inputs_bounds: {'Pprop' : [0., 125.]}
+R_min: 100
+V: 15.76 # airspeed
+w: 8.89948 # weight in N
+mu_p: 0.45 # % propulsion efficiency
+rho: 1.225 # at sea level
+Sref: 0.212 # m^2
+Cd0: 0.028
+AR: 8.027 # aspect ratio
+e: 0.99  # almost elliptical distribution
+CLmax: 1.0 # 1.4 is the real max, it will limit bank angle
+bat_joules: 75600  # 125 Watts during 10 minutes
+noise_level: 0.25

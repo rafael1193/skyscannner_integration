@@ -1,0 +1,10 @@
+### mesoNH parameters ###
+
+mesonh_files_path: '/some/path/to/data/folder/mesoNH/ARM_OneHour3600files_No_Horizontal_Wind/'  # DO NOT FORGET TRAILING '/'
+
+mesonh_file_time_step: 1
+max_time_minutes: 10
+
+origin: {'x': 2.2, 'y': 2.2, 'z': 0, 't': 0}  # Position offset for mesoNH wind
+
+use_dummy_env: True  # If True, deactivate wind. Else, use mesoNH data

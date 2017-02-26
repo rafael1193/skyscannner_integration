@@ -1,0 +1,79 @@
+### Pathplanner node parameters ###
+r_max: 250000  # Circle to straight line conversion threshold
+
+### Pathplanner library params ###
+# number of iterations
+niter: 60
+# starting altitude
+z_virt: 800
+
+# Grid specification. Used for plotting and
+# setting some (soft) boundaries to avoid
+# UAVs outside this zone
+M_xres: 15.0
+M_yres: 15.
+M_zres: 10.
+M_tres: 10.
+M_xmin: -137.5
+M_ymin: -137.5
+M_xmax: 237.5
+M_ymax: 237.5
+M_zmin: 990.
+M_zmax: 1010.
+xyz_boundmargin: 0.1
+
+#nb_acs: 1  # Number of UAVs (set in code)
+
+# Path planning parameters
+DT: 20.  # Path planning horizon
+N_wp: 20.  # Number of waypoints
+dT: 1.0  # ! Should be DT/N_wp
+dT_sim: 0.1
+dT_samples: 1.001  # time between samples
+N_pert: 100  # Number of initial random perturbations
+N_change_inputs: 2
+
+# fraction of planned path to execute before re-planning
+execute_ratio: 0.49
+
+# utility :  (Energy, Information, Bounds)
+utility_weights: [0.33, 0.33, 0.33]
+pprop_nominal: 62.
+
+# Enabling SPSA and setting SPSA parameters
+path_plan_spsa: False
+alpha_spsa: [0.01, 0.01]
+spsa_ak_p0_auto: True
+spsa_ak_p0_auto_iter: 20
+ck_p: [0.0001, 0.0001]
+ak_p: [[0.1, 2000.], [0.3, 0.3]]
+N_spsa: 200
+
+# optimize scipy
+path_plan_optimize_scipy: False
+path_plan_optimize_scipy_maxiter: 5
+path_plan_optimize_scipy_nrestart: 0
+
+# Additive gaussian noise level on samples
+noise_level: 0.25
+
+# use C++ libGP implementation and set some parameters
+# bounds are specified on log(hyper-parameters)
+use_libgp: True
+gp_opt_python: True
+gp_opt_iter: 10
+gp_hyper_bounds: [[0, 5], [0, 5], [0, 5], [0, 5], [-10, 10], [-10, 10]]
+gp_discr_tol: 0.1
+
+# Optional plotting of GP prediction at each step
+plot_wind_component: -1
+verbose: True
+wait_user_step: False
+
+# Optional :  specify gp parameters (disables optimisation)
+gp_parameters: [[4.31232263, 5.        , 3.51498957, 4.33334354, 0.        , -1.35808769],
+                [4.30783847, 4.43818963, 4.15416473, 3.77660934, 0.        , -1.30270938],
+                [3.26586388, 5.        , 3.54384765, 3.94164452, 0.36344006, -1.16495577]]
+
+# disable wind
+use_dummy_env: False

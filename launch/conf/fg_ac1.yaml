@@ -1,0 +1,19 @@
+# FlightGear ac id
+# It doesn't use it actually but it is needed by the simulation architecture.
+ac_id: 1
+
+default_ac_input/R: 50
+default_ac_input/Pprop: 35
+
+# Initial position GPS coordinates
+# LAAS-CNRS coordinates
+lat: 43.56195
+lon: 1.47751
+
+# FG comm parameters
+fg_hostname: localhost      # FG hostname
+control_port_in: 51001      # Command inputs
+control_port_out: 50001     # State feedback
+wind_port_in: 51002         # Wind injection
+wind_port_out: 50002        # Wind measurements
+telnet_port: 5401           # For autopilot activation

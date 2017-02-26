@@ -1,0 +1,45 @@
+<launch>
+
+    <node pkg="skyscanner"
+        type="stats.py"
+        name="stats"
+        required="true"
+        output="screen"
+    />
+
+    <node pkg="rqt_plot"
+        type="rqt_plot"
+        args="/ac_1/uav_state/position/z /ac_1/expected_uav_state/position/z"
+        name="rqt_plot_altitude"
+    />
+
+    <node pkg="rqt_plot"
+        type="rqt_plot"
+        args="/ac_1/stats/crosstrack_error /ac_1/stats/altitude_error /ac_1/stats/heading_error"
+        name="rqt_plot_errors"
+    />
+
+    <node pkg="rqt_plot"
+        type="rqt_plot"
+        args="/ac_1/energy_consumption/voltage /ac_1/energy_consumption/current /ac_1/energy_consumption/power"
+        name="rqt_plot_energy"
+    />
+
+    <node pkg="rqt_plot"
+        type="rqt_plot"
+        args="/ac_1/measured_wind/wind/up"
+        name="rqt_plot_wind"
+    />
+
+    <node pkg="rqt_plot"
+        type="rqt_plot"
+        args="/ac_1/uav_speed/airspeed /ac_1/uav_speed/groundspeed /ac_1/uav_speed/vertical_speed"
+        name="rqt_plot_speed"
+    />
+
+    <node pkg="rqt_plotxy"
+        type="rqt_plotxy"
+        name="rqt_plotxy_position"
+    />
+
+</launch>

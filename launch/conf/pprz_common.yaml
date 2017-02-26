@@ -1,0 +1,5 @@
+abs_tol: 0.001  # Relative tolerance when comparing floats
+
+# List of aircraft namespaces
+aircrafts_ns:  ["ac_1"]  # ["ac_1", "ac_2"]
+origin: {'x': 0, 'y': 0, 'z': 185}

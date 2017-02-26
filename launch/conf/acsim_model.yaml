@@ -1,0 +1,23 @@
+### acsim parameters ###
+
+## Must be the same as in pathplanner ##
+dT: 1.  # ! Should be DT/N_wp
+dT_sim: 0.1
+dT_samples: 1.001  # time between samples
+##########################################
+
+ac_model: 'propulsion'
+ac_inputs_bounds: {'Pprop' : [0., 125.]}
+V: 15. # airspeed
+w: 8.829 # weight in N
+mu_p: 0.45
+rho: 1.2839  # doit dependre de la temperature et pression
+Sref: 0.27
+Cd0: 0.0233
+AR: 6.144237037037037
+e: 0.93  # depend de la vitesse -> entre 0.9 et 0.97
+CLmax: 0.4
+bat_joules: 75600  # 125 Watts during 10 minutes
+Pmin: 0.
+Pmax: 125.
+noise_level: 0.25

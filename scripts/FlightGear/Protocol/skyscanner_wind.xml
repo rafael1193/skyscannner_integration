@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <generic>
+        <output>
+            <line_separator>newline</line_separator>
+            <var_separator>|</var_separator>
+            <chunk>
+                <name>wind-from-north (m/s)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/environment/wind-from-north-fps</node>
+                <factor>0.3048</factor>
+            </chunk>
+            <chunk>
+                <name>wind-from-east (m/s)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/environment/wind-from-east-fps</node>
+                <factor>0.3048</factor>
+            </chunk>
+            <chunk>
+                <name>wind-from-down (m/s)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/environment/wind-from-down-fps</node>
+                <factor>0.3048</factor>
+            </chunk>
+            <chunk>
+              <name>wind-from-heading (deg)</name>
+              <format>%f</format>
+              <type>double</type>
+              <node>/environment/wind-from-heading-deg</node>
+            </chunk>
+            <chunk>
+              <name>wind-speed (m/s)</name>
+              <format>%f</format>
+              <type>double</type>
+              <factor>0.514444444</factor>
+              <node>/environment/wind-speed-kt</node>
+            </chunk>
+        </output>
+        <input>
+            <line_separator>newline</line_separator>
+            <var_separator>|</var_separator>
+            <chunk>
+                <name>wind-from-north (m/s)</name>
+                <type>double</type>
+                <node>/environment/config/presets/wind-from-north-fps</node>
+                <factor>3.281</factor>
+            </chunk>
+            <chunk>
+                <name>wind-from-east (m/s)</name>
+                <type>double</type>
+                <node>/environment/config/presets/wind-from-east-fps</node>
+                <factor>3.281</factor>
+            </chunk>
+            <chunk>
+                <name>local-weather-lift (m/s)</name>
+                <type>double</type>
+                <node>/environment/local-weather-lift-fps</node>
+                <factor>3.281</factor>
+            </chunk>
+            <!-- Some parameters that need to be always set -->
+            <chunk>
+              <name>wind-override</name>
+              <type>bool</type> <!-- should be true. Send "1" -->
+              <node>/environment/config/presets/wind-override</node>
+            </chunk>
+            <chunk>
+              <name>metar-updates-environment</name>
+              <type>bool</type> <!-- should be false. Send "0" -->
+              <node>/environment/params/metar-updates-environment</node>
+            </chunk>
+            <chunk>
+              <name>metar-updates-environment</name>
+              <type>bool</type> <!-- should be false. Send "0" -->
+              <node>/environment/params/metar-updates-winds-aloft</node>
+            </chunk>
+        </input>
+    </generic>
+</PropertyList>

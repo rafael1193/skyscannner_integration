@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <generic>
+        <output>
+            <line_separator>newline</line_separator>
+            <var_separator>|</var_separator>
+            <!-- <binary_mode>true</binary_mode> -->
+            <!-- <byte_order>network</byte_order> -->
+            <!-- <binary_footer>magic,0x12345678</binary_footer> -->
+            <!-- position -->
+            <chunk>
+                <name>latitude (deg)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/position/latitude-deg</node>
+            </chunk>
+            <chunk>
+                <name>longitude (deg)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/position/longitude-deg</node>
+            </chunk>
+            <chunk>
+                <name>altitude above ground (m)</name>
+                <format>%f</format>
+                <type>double</type>
+                <factor>0.3048</factor>  <!-- feet to m -->
+                <node>/position/altitude-agl-ft</node>
+            </chunk>
+            <!-- attitude -->
+            <chunk>
+                <name>heading (deg)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/orientation/heading-deg</node>
+            </chunk>
+            <chunk>
+                <name>pitch (deg)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/orientation/pitch-deg</node>
+            </chunk>
+            <chunk>
+                <name>roll (deg)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/orientation/roll-deg</node>
+            </chunk>
+            <!-- speed -->
+            <chunk>
+                <name>airspeed (m/s)</name>
+                <format>%f</format>
+                <type>double</type>
+                <factor>0.5144</factor>  <!-- knot to m/s -->
+                <node>/velocities/airspeed-kt</node>
+            </chunk>
+            <chunk>
+                <name>groundspeed (m/s)</name>
+                <format>%f</format>
+                <type>double</type>
+                <factor>0.5144</factor>  <!-- knot to m/s -->
+                <node>/velocities/groundspeed-kt</node>
+            </chunk>
+            <chunk>
+                <name>vertical speed (m/s)</name>
+                <format>%f</format>
+                <type>double</type>
+                <factor>0.3048</factor>  <!-- feet/s to m/s -->
+                <node>/velocities/vertical-speed-fps</node>
+            </chunk>
+        </output>
+        <input>
+            <line_separator>newline</line_separator>
+            <var_separator>|</var_separator>
+            <binary_mode>false</binary_mode>
+            <!-- autopilot state -->
+            <!-- heading control -->
+            <chunk>
+                <name>heading target (deg)</name>
+                <format>%f</format>
+                <type>double</type>
+                <node>/autopilot/settings/true-heading-deg</node>
+            </chunk>
+            <!-- pitch control -->
+            <chunk>
+                <name>agl target (m)</name>
+                <format>%f</format>
+                <type>double</type>
+                <factor>3.2808399</factor>  <!-- m to feet -->
+                <node>/autopilot/settings/target-agl-ft</node>
+            </chunk>
+        </input>
+    </generic>
+</PropertyList>

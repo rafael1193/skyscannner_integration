@@ -1,0 +1,14 @@
+# Paparazzi ac_id
+ac_id: 2
+
+# *default_ac_input*: expeted turn radius and propulsion power expected by
+# the path planner while initializating
+default_ac_input/R: 50
+default_ac_input/Pprop: 35
+
+# Paparazzi NPS UDP server parameters
+nps_host: "127.0.0.1"
+nps_port: 50502
+
+# Ground altitude
+ground_alt: 185

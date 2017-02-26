@@ -1,0 +1,9 @@
+# files
+*~
+*.pyc
+
+# Hidden files
+.*
+!.gitignore
+
+# catkin utogenerated
