@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>skyscanner</name>
+  <name>skyscanner_integration</name>
   <version>1.0.0</version>
   <description>The SkyScanner integration</description>
 
